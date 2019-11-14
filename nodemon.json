@@ -1,0 +1,7 @@
+{
+    "env": {
+        "PORT": "8080",
+        "SERVER_LEVEL": "local",
+        "DOCKER_VER": "unknown"
+    }
+}

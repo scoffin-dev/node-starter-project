@@ -1,0 +1,12 @@
+{
+    "EXAMPLE_ENDPOINT": {
+      "REST": {
+        "GET_REQ": "https://api.nasa.gov/planetary/apod",
+        "POST_REQ": "https://postman-echo.com/post"
+      },
+      "SOAP": {
+          "POST_REQ": "http://www.dataaccess.com/webservicesserver/numberconversion.wso"  
+        }
+        
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "node-starter-project",
+  "version": "1.0.0",
+  "description": "GitHub: https://mtdproducts.visualstudio.com/MowMoney/_git/node-starter-project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "mocha"
+  },
+  "author": "scoffin-dev",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
+    "chai-xml": "^0.3.2",
+    "express": "^4.17.1",
+    "mocha": "^6.2.0",
+    "path": "^0.12.7",
+    "winston": "^3.2.1",
+    "xml-js": "^1.6.11"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
