@@ -10,7 +10,7 @@ const versionNumber = process.env.DOCKER_VER;
 
 app.use(contextRoot, router1, router2, router3);
 
-// AWS health check
+// Health check
 app.get(contextRoot + '/check', (req, res) => {
     try {
         console.log(`${contextRoot} Health Check Request - Server level : ${serverLevel}, Version : ${versionNumber}`);
