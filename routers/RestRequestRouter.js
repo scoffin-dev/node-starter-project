@@ -5,6 +5,7 @@ const restHelper = require('../helpers/restRequestHelper');
 const reqEndpoint = require('../config/service-endpoints');
 const restGetUrl = reqEndpoint.EXAMPLE_ENDPOINT.REST.GET_REQ;
 const restPostUrl = reqEndpoint.EXAMPLE_ENDPOINT.REST.POST_REQ;
+const nasaApiUrl = reqEndpoint.MISC_ENDPOINT.NASA_API_URL;
 const logger = require('../log/logger')(__filename);
 router.use(express.json());
 router.use(express.urlencoded({extended:true}));
@@ -17,11 +18,16 @@ router.get('/example-rest-get', async function (req, res) {
         // Param from the query string in the client's initial request to this service
         let apiKey = req.query.api_key;
 
-        // Create and send REST request
-        let apiResponse = await restHelper.restGetRequest(`${restGetUrl}?api_key=${apiKey}`);
-        
-        // Send back the photo description
-        res.send(apiResponse.data.explanation);
+        // Make sure the required param is present in the query string and has a value
+        if(apiKey && apiKey != undefined) {
+            // Create and send REST request
+            let apiResponse = await restHelper.restGetRequest(`${restGetUrl}?api_key=${apiKey}`);
+            
+            // Send back the photo description
+            res.send(apiResponse.data.explanation);
+        } else {
+            res.status(500).send(`Precondition failed: You must provide a value for the api_key parameter. If you do not have an APOD API key, get one at ${nasaApiUrl} or use DEMO_KEY.`);
+        }
     } catch(err) {
         res.status(500).send(`Request failed: ${err.message}`);
     }

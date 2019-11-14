@@ -10,7 +10,7 @@ const logger = require('../log/logger')(__filename);
 router.use(express.json());
 router.use(express.urlencoded({extended:true}));
 
-// * * * SOAP can technically (sort of) support GET requests, but it is impractical, so I'm not including an example * * *
+// * * * SOAP can technically support GET requests, but it is impractical, so I'm not including an example * * *
 
 // * * * Acts as a middleman in a POST request to a number conversion service * * * //
 // localhost:8080/node-starter-project/example-soap-post {"number":"12345"}
@@ -30,7 +30,6 @@ router.post('/example-soap-post', async function (req, res) {
 
         let responseMsg = `The number ${numToConvert} was converted to '${convertedNum}'`;
         
-        // Log the result
         logger.info(responseMsg);
 
         // Send the response

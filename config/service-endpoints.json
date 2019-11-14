@@ -8,5 +8,8 @@
           "POST_REQ": "http://www.dataaccess.com/webservicesserver/numberconversion.wso"  
         }
         
+    },
+    "MISC_ENDPOINT": {
+      "NASA_API_URL": "https://api.nasa.gov/"
     }
 }
